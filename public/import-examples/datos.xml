@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calendar>
+  <events>
+    <event>
+      <id>laliga-girona</id>
+      <teamType>futbol</teamType>
+      <competition>LaLiga EA Sports</competition>
+      <date>2026-04-10T21:00:00+02:00</date>
+      <venue>Santiago Bernabeu</venue>
+      <homeTeam>Real Madrid</homeTeam>
+      <awayTeam>Girona</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>ucl-quarter</id>
+      <teamType>futbol</teamType>
+      <competition>UEFA Champions League</competition>
+      <date>2026-04-15T21:00:00+02:00</date>
+      <venue>Allianz Arena</venue>
+      <homeTeam>Bayern</homeTeam>
+      <awayTeam>Real Madrid</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>acb-malaga</id>
+      <teamType>baloncesto</teamType>
+      <competition>Liga Endesa</competition>
+      <date>2026-04-17T20:30:00+02:00</date>
+      <venue>WiZink Center</venue>
+      <homeTeam>Real Madrid</homeTeam>
+      <awayTeam>Unicaja</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>euroleague-fener</id>
+      <teamType>baloncesto</teamType>
+      <competition>Euroliga</competition>
+      <date>2026-04-20T19:00:00+02:00</date>
+      <venue>Ulker Sports Arena</venue>
+      <homeTeam>Fenerbahce</homeTeam>
+      <awayTeam>Real Madrid</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>laliga-betis</id>
+      <teamType>futbol</teamType>
+      <competition>LaLiga EA Sports</competition>
+      <date>2026-04-23T19:30:00+02:00</date>
+      <venue>Benito Villamarin</venue>
+      <homeTeam>Betis</homeTeam>
+      <awayTeam>Real Madrid</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>acb-barca</id>
+      <teamType>baloncesto</teamType>
+      <competition>Liga Endesa</competition>
+      <date>2026-04-26T18:30:00+02:00</date>
+      <venue>Palau Blaugrana</venue>
+      <homeTeam>Barcelona</homeTeam>
+      <awayTeam>Real Madrid</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>laliga-sevilla</id>
+      <teamType>futbol</teamType>
+      <competition>LaLiga EA Sports</competition>
+      <date>2026-05-03T21:00:00+02:00</date>
+      <venue>Santiago Bernabeu</venue>
+      <homeTeam>Real Madrid</homeTeam>
+      <awayTeam>Sevilla</awayTeam>
+      <status>Programado</status>
+    </event>
+    <event>
+      <id>euroleague-monaco</id>
+      <teamType>baloncesto</teamType>
+      <competition>Euroliga</competition>
+      <date>2026-05-08T20:45:00+02:00</date>
+      <venue>WiZink Center</venue>
+      <homeTeam>Real Madrid</homeTeam>
+      <awayTeam>Monaco</awayTeam>
+      <status>Programado</status>
+    </event>
+  </events>
+</calendar>

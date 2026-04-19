@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'RM Neue';
+  src: url('/fonts/RMNeue-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RM Neue';
+  src: url('/fonts/RMNeue-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RM Neue';
+  src: url('/fonts/RMNeue-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --rm-bg-page:
+    radial-gradient(circle at 12% -8%, rgba(159, 196, 255, 0.42), transparent 37%),
+    radial-gradient(circle at 88% -14%, rgba(137, 197, 255, 0.33), transparent 36%),
+    linear-gradient(180deg, #edf3ff 0%, #e7efff 36%, #dde8f9 100%);
+  --rm-bg-soft: rgba(240, 247, 255, 0.62);
+  --rm-line: rgba(171, 195, 233, 0.34);
+  --rm-line-strong: rgba(150, 181, 230, 0.45);
+  --rm-blue: #2c5fd7;
+  --rm-blue-strong: #0d338f;
+  --rm-dark: #0f234f;
+  --rm-muted: #4f648f;
+  font-family: 'RM Neue', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--rm-dark);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--rm-bg-page);
+  background-attachment: fixed;
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+}

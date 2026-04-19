@@ -1,0 +1,107 @@
+export const parallaxGallery = [
+  {
+    id: 'bernabeu-nocturno',
+    kicker: 'Escena 01',
+    title: 'Bernabeu en noche europea',
+    caption: 'Capas largas con desplazamiento suave y foco en atmosfera.',
+    baseImage: '/media/news/hero-city.jpg',
+    midImage: '/media/hero_banner_desktop_14.jpg',
+    frontImage: '/media/hero_banner_desktop_14_no_bg.png',
+    tone: 'cold',
+  },
+  {
+    id: 'ritmo-entrenamiento',
+    kicker: 'Escena 02',
+    title: 'Ritmo de entrenamiento',
+    caption: 'Profundidad editorial con cristal liquido y movimiento horizontal.',
+    baseImage: '/media/news/training.jpg',
+    midImage: '/media/news/vinicius.jpg',
+    frontImage: '/media/hero_banner_desktop_14_no_bg.png',
+    tone: 'warm',
+  },
+  {
+    id: 'noche-blanca',
+    kicker: 'Escena 03',
+    title: 'Narrativa de noche blanca',
+    caption: 'Recorte frontal y halos frios para cerrar la secuencia visual.',
+    baseImage: '/media/news/rmplay.jpg',
+    midImage: '/media/news/scariolo.jpg',
+    frontImage: '/media/hero_banner_desktop_14_no_bg.png',
+    tone: 'neutral',
+  },
+]
+
+export const parallaxAssetPlan = [
+  {
+    key: 'hero_bg_desktop',
+    fileName: 'hero-bg-desktop-3840.avif',
+    resolution: '3840x1726',
+    usage: 'Capa base del hero principal en desktop (2x de 1920x863).',
+  },
+  {
+    key: 'hero_bg_mobile',
+    fileName: 'hero-bg-mobile-1440.avif',
+    resolution: '1440x2160',
+    usage: 'Capa base del hero principal en movil (ratio 2:3 para recorte vertical).',
+  },
+  {
+    key: 'hero_players_cutout',
+    fileName: 'hero-players-cutout-3840.png',
+    resolution: '3840x1726',
+    usage: 'Capa frontal con futbolistas y transparencia real (PNG o WebP con alpha).',
+  },
+  {
+    key: 'gallery_scene_01_back',
+    fileName: 'parallax-scene-01-back-3200.avif',
+    resolution: '3200x1800',
+    usage: 'Fondo principal de la escena 01.',
+  },
+  {
+    key: 'gallery_scene_01_mid',
+    fileName: 'parallax-scene-01-mid-2800.avif',
+    resolution: '2800x1575',
+    usage: 'Plano medio de la escena 01.',
+  },
+  {
+    key: 'gallery_scene_01_front',
+    fileName: 'parallax-scene-01-front-2800.png',
+    resolution: '2800x1575',
+    usage: 'Plano frontal con recorte transparente de la escena 01.',
+  },
+  {
+    key: 'gallery_scene_02_back',
+    fileName: 'parallax-scene-02-back-3200.avif',
+    resolution: '3200x1800',
+    usage: 'Fondo principal de la escena 02.',
+  },
+  {
+    key: 'gallery_scene_02_mid',
+    fileName: 'parallax-scene-02-mid-2800.avif',
+    resolution: '2800x1575',
+    usage: 'Plano medio de la escena 02.',
+  },
+  {
+    key: 'gallery_scene_02_front',
+    fileName: 'parallax-scene-02-front-2800.png',
+    resolution: '2800x1575',
+    usage: 'Plano frontal transparente de la escena 02.',
+  },
+  {
+    key: 'gallery_scene_03_back',
+    fileName: 'parallax-scene-03-back-3200.avif',
+    resolution: '3200x1800',
+    usage: 'Fondo principal de la escena 03.',
+  },
+  {
+    key: 'gallery_scene_03_mid',
+    fileName: 'parallax-scene-03-mid-2800.avif',
+    resolution: '2800x1575',
+    usage: 'Plano medio de la escena 03.',
+  },
+  {
+    key: 'gallery_scene_03_front',
+    fileName: 'parallax-scene-03-front-2800.png',
+    resolution: '2800x1575',
+    usage: 'Plano frontal transparente de la escena 03.',
+  },
+]

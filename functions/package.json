@@ -1,0 +1,15 @@
+{
+  "name": "real-madrid-chatbot-functions",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "firebase-functions": "^6.5.0",
+    "openai": "^6.34.0"
+  }
+}

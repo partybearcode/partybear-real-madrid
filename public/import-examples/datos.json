@@ -1,0 +1,82 @@
+[
+  {
+    "id": "laliga-girona",
+    "teamType": "futbol",
+    "competition": "LaLiga EA Sports",
+    "date": "2026-04-10T21:00:00+02:00",
+    "venue": "Santiago Bernabeu",
+    "homeTeam": "Real Madrid",
+    "awayTeam": "Girona",
+    "status": "Programado"
+  },
+  {
+    "id": "ucl-quarter",
+    "teamType": "futbol",
+    "competition": "UEFA Champions League",
+    "date": "2026-04-15T21:00:00+02:00",
+    "venue": "Allianz Arena",
+    "homeTeam": "Bayern",
+    "awayTeam": "Real Madrid",
+    "status": "Programado"
+  },
+  {
+    "id": "acb-malaga",
+    "teamType": "baloncesto",
+    "competition": "Liga Endesa",
+    "date": "2026-04-17T20:30:00+02:00",
+    "venue": "WiZink Center",
+    "homeTeam": "Real Madrid",
+    "awayTeam": "Unicaja",
+    "status": "Programado"
+  },
+  {
+    "id": "euroleague-fener",
+    "teamType": "baloncesto",
+    "competition": "Euroliga",
+    "date": "2026-04-20T19:00:00+02:00",
+    "venue": "Ulker Sports Arena",
+    "homeTeam": "Fenerbahce",
+    "awayTeam": "Real Madrid",
+    "status": "Programado"
+  },
+  {
+    "id": "laliga-betis",
+    "teamType": "futbol",
+    "competition": "LaLiga EA Sports",
+    "date": "2026-04-23T19:30:00+02:00",
+    "venue": "Benito Villamarin",
+    "homeTeam": "Betis",
+    "awayTeam": "Real Madrid",
+    "status": "Programado"
+  },
+  {
+    "id": "acb-barca",
+    "teamType": "baloncesto",
+    "competition": "Liga Endesa",
+    "date": "2026-04-26T18:30:00+02:00",
+    "venue": "Palau Blaugrana",
+    "homeTeam": "Barcelona",
+    "awayTeam": "Real Madrid",
+    "status": "Programado"
+  },
+  {
+    "id": "laliga-sevilla",
+    "teamType": "futbol",
+    "competition": "LaLiga EA Sports",
+    "date": "2026-05-03T21:00:00+02:00",
+    "venue": "Santiago Bernabeu",
+    "homeTeam": "Real Madrid",
+    "awayTeam": "Sevilla",
+    "status": "Programado"
+  },
+  {
+    "id": "euroleague-monaco",
+    "teamType": "baloncesto",
+    "competition": "Euroliga",
+    "date": "2026-05-08T20:45:00+02:00",
+    "venue": "WiZink Center",
+    "homeTeam": "Real Madrid",
+    "awayTeam": "Monaco",
+    "status": "Programado"
+  }
+]

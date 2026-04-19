@@ -1,0 +1,176 @@
+TABLE
+0,1
+"sheetjs"
+VECTORS
+0,9
+""
+TUPLES
+0,8
+""
+DATA
+0,0
+""
+-1,0
+BOT
+1,0
+"id"
+1,0
+"teamType"
+1,0
+"competition"
+1,0
+"date"
+1,0
+"venue"
+1,0
+"homeTeam"
+1,0
+"awayTeam"
+1,0
+"status"
+-1,0
+BOT
+1,0
+"laliga-girona"
+1,0
+"futbol"
+1,0
+"LaLiga EA Sports"
+1,0
+"2026-04-10T21:00:00+02:00"
+1,0
+"Santiago Bernabeu"
+1,0
+"Real Madrid"
+1,0
+"Girona"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"ucl-quarter"
+1,0
+"futbol"
+1,0
+"UEFA Champions League"
+1,0
+"2026-04-15T21:00:00+02:00"
+1,0
+"Allianz Arena"
+1,0
+"Bayern"
+1,0
+"Real Madrid"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"acb-malaga"
+1,0
+"baloncesto"
+1,0
+"Liga Endesa"
+1,0
+"2026-04-17T20:30:00+02:00"
+1,0
+"WiZink Center"
+1,0
+"Real Madrid"
+1,0
+"Unicaja"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"euroleague-fener"
+1,0
+"baloncesto"
+1,0
+"Euroliga"
+1,0
+"2026-04-20T19:00:00+02:00"
+1,0
+"Ulker Sports Arena"
+1,0
+"Fenerbahce"
+1,0
+"Real Madrid"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"laliga-betis"
+1,0
+"futbol"
+1,0
+"LaLiga EA Sports"
+1,0
+"2026-04-23T19:30:00+02:00"
+1,0
+"Benito Villamarin"
+1,0
+"Betis"
+1,0
+"Real Madrid"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"acb-barca"
+1,0
+"baloncesto"
+1,0
+"Liga Endesa"
+1,0
+"2026-04-26T18:30:00+02:00"
+1,0
+"Palau Blaugrana"
+1,0
+"Barcelona"
+1,0
+"Real Madrid"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"laliga-sevilla"
+1,0
+"futbol"
+1,0
+"LaLiga EA Sports"
+1,0
+"2026-05-03T21:00:00+02:00"
+1,0
+"Santiago Bernabeu"
+1,0
+"Real Madrid"
+1,0
+"Sevilla"
+1,0
+"Programado"
+-1,0
+BOT
+1,0
+"euroleague-monaco"
+1,0
+"baloncesto"
+1,0
+"Euroliga"
+1,0
+"2026-05-08T20:45:00+02:00"
+1,0
+"WiZink Center"
+1,0
+"Real Madrid"
+1,0
+"Monaco"
+1,0
+"Programado"
+-1,0
+EOD

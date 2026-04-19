@@ -1,0 +1,9 @@
+id,teamType,competition,date,venue,homeTeam,awayTeam,status
+laliga-girona,futbol,LaLiga EA Sports,2026-04-10T21:00:00+02:00,Santiago Bernabeu,Real Madrid,Girona,Programado
+ucl-quarter,futbol,UEFA Champions League,2026-04-15T21:00:00+02:00,Allianz Arena,Bayern,Real Madrid,Programado
+acb-malaga,baloncesto,Liga Endesa,2026-04-17T20:30:00+02:00,WiZink Center,Real Madrid,Unicaja,Programado
+euroleague-fener,baloncesto,Euroliga,2026-04-20T19:00:00+02:00,Ulker Sports Arena,Fenerbahce,Real Madrid,Programado
+laliga-betis,futbol,LaLiga EA Sports,2026-04-23T19:30:00+02:00,Benito Villamarin,Betis,Real Madrid,Programado
+acb-barca,baloncesto,Liga Endesa,2026-04-26T18:30:00+02:00,Palau Blaugrana,Barcelona,Real Madrid,Programado
+laliga-sevilla,futbol,LaLiga EA Sports,2026-05-03T21:00:00+02:00,Santiago Bernabeu,Real Madrid,Sevilla,Programado
+euroleague-monaco,baloncesto,Euroliga,2026-05-08T20:45:00+02:00,WiZink Center,Real Madrid,Monaco,Programado
