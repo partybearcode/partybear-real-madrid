@@ -2,6 +2,7 @@
 
 <div align="center">
   <h1 align="center">Real Madrid Experience</h1>
+  <img src="public/media/hero_banner_desktop_14.jpg" alt="Real Madrid Experience cover" width="900" />
   <p align="center">
     React + Firebase web application inspired by an artistic Real Madrid digital experience.
     <br />
