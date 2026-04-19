@@ -1,24 +1,18 @@
-import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signInWithRedirect,
-  signOut,
-  updateProfile,
-} from 'firebase/auth'
-import {
-  collection,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  serverTimestamp,
-  setDoc,
-} from 'firebase/firestore'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { auth, db } from '../lib/firebase'
 import { useCart } from '../hooks/useCart'
+import {
+  createGoogleProvider,
+  loginWithEmail as loginWithEmailService,
+  loginWithGoogle as loginWithGoogleService,
+  logoutUser,
+  registerWithEmail,
+  subscribeAuth,
+  subscribeSavedMatches,
+  subscribeUserProfile,
+  syncUserProfile,
+  toggleSavedMatchForUser,
+  updateUserProfileDocument,
+} from '../services/authService'
 import { AppContext } from './appContext'
 
 function normalizeError(error) {
@@ -47,11 +41,7 @@ function mapProfile(user, profile) {
 
 export function AppProvider({ children }) {
   const cart = useCart()
-  const googleProvider = useMemo(() => {
-    const provider = new GoogleAuthProvider()
-    provider.setCustomParameters({ prompt: 'select_account' })
-    return provider
-  }, [])
+  const googleProvider = useMemo(() => createGoogleProvider(), [])
 
   const [user, setUser] = useState(null)
   const [profile, setProfile] = useState(null)
@@ -61,7 +51,7 @@ export function AppProvider({ children }) {
   const [savingMatchId, setSavingMatchId] = useState('')
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (nextUser) => {
+    const unsubscribe = subscribeAuth((nextUser) => {
       setUser(nextUser)
       setAuthLoading(false)
       setAuthError('')
@@ -77,41 +67,27 @@ export function AppProvider({ children }) {
       return
     }
 
-    const profileRef = doc(db, 'users', user.uid)
-    const matchesRef = collection(db, 'calendarUserTree', user.uid, 'savedEvents')
-
-    setDoc(
-      profileRef,
-      {
-        email: user.email,
-        displayName: user.displayName || user.email?.split('@')[0] || 'Madridista',
-        photoURL: user.photoURL || '',
-        updatedAt: serverTimestamp(),
-      },
-      { merge: true },
-    ).catch(() => {
+    syncUserProfile(user).catch(() => {
       setAuthError('No se pudo sincronizar el perfil con Firestore.')
     })
 
-    const unsubscribeProfile = onSnapshot(
-      profileRef,
-      (snapshot) => {
-        setProfile(snapshot.exists() ? snapshot.data() : null)
+    const unsubscribeProfile = subscribeUserProfile(user.uid, {
+      onData: (profileData) => {
+        setProfile(profileData)
       },
-      () => {
+      onError: () => {
         setAuthError('No se pudo leer el perfil. Revisa reglas de Firestore.')
       },
-    )
+    })
 
-    const unsubscribeMatches = onSnapshot(
-      matchesRef,
-      (snapshot) => {
-        setSavedMatchIds(snapshot.docs.map((item) => item.id))
+    const unsubscribeMatches = subscribeSavedMatches(user.uid, {
+      onData: (ids) => {
+        setSavedMatchIds(ids)
       },
-      () => {
+      onError: () => {
         setAuthError('No se pudieron leer los partidos guardados.')
       },
-    )
+    })
 
     return () => {
       unsubscribeProfile()
@@ -123,26 +99,7 @@ export function AppProvider({ children }) {
     setAuthError('')
 
     try {
-      const credential = await createUserWithEmailAndPassword(auth, email.trim(), password)
-
-      const cleanName = displayName.trim()
-
-      if (cleanName) {
-        await updateProfile(credential.user, { displayName: cleanName })
-      }
-
-      await setDoc(
-        doc(db, 'users', credential.user.uid),
-        {
-          email: credential.user.email,
-          displayName: cleanName || credential.user.email?.split('@')[0] || 'Madridista',
-          favoriteSection: 'futbol',
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp(),
-        },
-        { merge: true },
-      )
-
+      await registerWithEmail({ email, password, displayName })
       return { ok: true }
     } catch (error) {
       const message = normalizeError(error)
@@ -155,7 +112,7 @@ export function AppProvider({ children }) {
     setAuthError('')
 
     try {
-      await signInWithEmailAndPassword(auth, email.trim(), password)
+      await loginWithEmailService({ email, password })
       return { ok: true }
     } catch (error) {
       const message = normalizeError(error)
@@ -173,11 +130,11 @@ export function AppProvider({ children }) {
         (window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(pointer: coarse)').matches)
 
       if (prefersRedirect) {
-        await signInWithRedirect(auth, googleProvider)
+        await loginWithGoogleService({ provider: googleProvider, preferRedirect: true })
         return { ok: true, pendingRedirect: true }
       }
 
-      await signInWithPopup(auth, googleProvider)
+      await loginWithGoogleService({ provider: googleProvider, preferRedirect: false })
       return { ok: true }
     } catch (error) {
       const message = normalizeError(error)
@@ -188,7 +145,7 @@ export function AppProvider({ children }) {
 
   const logout = useCallback(async () => {
     setAuthError('')
-    await signOut(auth)
+    await logoutUser()
   }, [])
 
   const updateUserProfile = useCallback(
@@ -198,26 +155,7 @@ export function AppProvider({ children }) {
       setAuthError('')
 
       try {
-        const payload = {
-          updatedAt: serverTimestamp(),
-        }
-
-        const cleanName = displayName.trim()
-
-        if (cleanName) {
-          payload.displayName = cleanName
-        }
-
-        if (favoriteSection) {
-          payload.favoriteSection = favoriteSection
-        }
-
-        await setDoc(doc(db, 'users', user.uid), payload, { merge: true })
-
-        if (cleanName && auth.currentUser?.displayName !== cleanName) {
-          await updateProfile(auth.currentUser, { displayName: cleanName })
-        }
-
+        await updateUserProfileDocument({ user, displayName, favoriteSection })
         return { ok: true }
       } catch (error) {
         const message = normalizeError(error)
@@ -236,18 +174,7 @@ export function AppProvider({ children }) {
       setSavingMatchId(match.id)
 
       try {
-        const matchRef = doc(db, 'calendarUserTree', user.uid, 'savedEvents', match.id)
-        const isAlreadySaved = savedMatchIds.includes(match.id)
-
-        if (isAlreadySaved) {
-          await deleteDoc(matchRef)
-        } else {
-          await setDoc(matchRef, {
-            ...match,
-            savedAt: serverTimestamp(),
-          })
-        }
-
+        await toggleSavedMatchForUser({ user, match, savedMatchIds })
         return { ok: true }
       } catch (error) {
         const message = normalizeError(error)
